@@ -71,7 +71,7 @@ class BanxicoApi:
         return self._call(series_ids)
     
     def getByCode(self, code):
-        code_series = self.config["codes"][code]
+        code_series = self.config["code_mappings"][code]
         return self.get(code_series)
     
     
