@@ -1,13 +1,72 @@
 import requests
-import datetime
 from typing import List
-import yaml
 
 class BanxicoApi:
 
     def __init__(self, token):
         self.token = token
         self.base = "https://www.banxico.org.mx/SieAPIRest/service/v1/series"
+        self.code_mappings = {
+            "CF120": [
+                "SF43695",
+                "SF43702",
+                "SF43696"
+            ],
+            "CF104": [
+                "SF43671",
+                "SF43672",
+                "SF43673",
+                "SF43671",
+                "SF43658",
+                "SF43686",
+                "SF43687",
+                "SF63315",
+                "SF43688",
+                "SF43689",
+                "SF43968",
+                "SF43690",
+                "SF43691",
+                "SF43692",
+                "SF43693",
+                "SF43657",
+                "SF267992",
+                "SF44081",
+                "SF65183",
+                "SF4403"
+            ],
+            "CF106": [
+                "SF43703",
+                "SF43704",
+                "SF43705",
+                "SF43706",
+                "SF43707",
+                "SF43708",
+                "SF43709",
+                "SF43710",
+                "SF43711"
+            ],
+            "CF894": [
+                "SF336106",
+                "SF336107",
+                "SF336108",
+                "SF336109",
+                "SF336110",
+                "SF336111",
+                "SF336112",
+                "SF336113",
+                "SF336114",
+                "SF336338"
+            ],
+            "CF169": [
+                "SF38460",
+                "SF38461",
+                "SF38462",
+                "SF38463",
+                "SF38464",
+                "SF38465",
+                "SF38466"
+            ]
+        }
 
     def _call(self, endpoint):
         url = f"{self.base}/{endpoint}?token={self.token}"

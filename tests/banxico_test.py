@@ -66,5 +66,13 @@ class TestBanxicoApi(unittest.TestCase):
         self.assertTrue(len(data) == len(series), "The JSON response does not contain all series")
         self.assertTrue(self._contains_ids(data, series), "The JSON response does not contain all series")
 
+    def test_get_series_from_code(self):
+        code = 'CF120'
+        series = self.api.code_mappings[code]
+        data = self.api.getByCode(code)
+        self.assertTrue(data, "The JSON response is empty")
+        self.assertTrue(len(data) == len(series), "The JSON response does not contain all series")
+        self.assertTrue(self._contains_ids(data, series), "The JSON response does not contain all series")
+
 if __name__ == '__main__':
     unittest.main()
