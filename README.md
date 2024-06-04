@@ -30,7 +30,7 @@ data = banxico_api.get(series)
 print(data)
 ```
 
-**etching Data with Metadata**
+**Fetching Data with Metadata**
 
 To include metadata in the response:
 
@@ -80,7 +80,7 @@ print(metadata)
 If you have predefined codes mapped to series, you can fetch data by code:
 
 ```
-code = 'some_code'
+code = 'CF120'
 data_by_code = banxico_api.getByCode(code)
 print(data_by_code)
 ```
