@@ -1,6 +1,6 @@
 ## Overview
 
-BanxicoApi is a Python class designed to interact with the Banxico (Banco de México) API. It allows users to fetch economic and financial series data, including metadata, and provides methods to handle data ranges and specific series codes.
+BanxicoApi is a Python package designed to interact with the Banxico (Banco de México) API. It allows users to fetch economic and financial series data, including metadata, and provides methods to handle data ranges and specific series codes.
 
 
 ## Usage
@@ -10,10 +10,10 @@ BanxicoApi is a Python class designed to interact with the Banxico (Banco de Mé
 You need to initialize the BanxicoApi class with your API token:
 
 ```
-from BanxicoApi import BanxicoApi
+import banxicoapi
 
 api_token = 'YOUR_API_TOKEN'
-banxico_api = BanxicoApi(api_token)
+banxico_api = banxicoapi.BanxicoApi(api_token)
 ```
 
 ### Fetching Series Data
