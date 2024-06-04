@@ -9,7 +9,7 @@ BanxicoApi is a Python package designed to interact with the Banxico (Banco de M
 
 You need to initialize the BanxicoApi class with your API token:
 
-```
+```python
 import banxicoapi
 
 api_token = 'YOUR_API_TOKEN'
@@ -24,7 +24,7 @@ You can fetch series data using the get method. This method allows for various p
 
 Fetch data for a list of series:
 
-```
+```python
 series = ['SF43718', 'SF46410']
 data = banxico_api.get(series)
 print(data)
@@ -34,7 +34,7 @@ print(data)
 
 To include metadata in the response:
 
-```
+```python
 data_with_metadata = banxico_api.get(series, metadata=True)
 print(data_with_metadata)
 ```
@@ -43,7 +43,7 @@ print(data_with_metadata)
 
 To fetch the most recent data available:
 
-```
+```python
 opportuno_data = banxico_api.get(series, oportuno=True)
 print(opportuno_data)
 ```
@@ -52,7 +52,7 @@ print(opportuno_data)
 
 You can specify a date range to fetch data:
 
-```
+```python
 start_date = '2022-01-01'
 end_date = '2022-12-31'
 data_in_range = banxico_api.get(series, start_date=start_date, end_date=end_date)
@@ -61,7 +61,7 @@ print(data_in_range)
 
 To include metadata with date range data:
 
-```
+```python
 data_in_range_with_metadata = banxico_api.get(series, start_date=start_date, end_date=end_date, metadata=True)
 print(data_in_range_with_metadata)
 ```
@@ -70,7 +70,7 @@ print(data_in_range_with_metadata)
 
 If you only need the metadata for a list of series:
 
-```
+```python
 metadata = banxico_api.getMetadata(series)
 print(metadata)
 ```
@@ -79,7 +79,7 @@ print(metadata)
 
 If you have predefined codes mapped to series, you can fetch data by code:
 
-```
+```python
 code = 'CF120'
 data_by_code = banxico_api.getByCode(code)
 print(data_by_code)
